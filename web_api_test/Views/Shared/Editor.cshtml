@@ -1,19 +1,28 @@
 ﻿@model web_api_test.Models.Reservation
 
-<div class="panel-heading">
-    Создать заказ
-</div>
-<div class="panel-body">
-    @using (Html.BeginForm("Add", "Home"))
-    {
+    <div class="panel-heading">
+        Создать заказ
+    </div>
+    <div class="panel-body">
+        @Html.ValidationSummary()
         <div class="form-group">
             <label>Имя клиента</label>
-            @Html.TextBoxFor(m => m.ClientName, new { @class = "form-control" })
+            <input class="form-control" data-bind="value: model.editor.name" />
         </div>
         <div class="form-group">
             <label>Помещение</label>
-            @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+            <input class="form-control" data-bind="value: model.editor.location" />
         </div>
-        <button type="submit" class="btn btn-primary">Сохранить</button>
-    }
-</div>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" data-bind="value: model.editor.email" />
+        </div>
+        <div class="form-group">
+            <label>Телефон</label>
+            <input class="form-control" data-bind="value: model.editor.phone" />
+        </div>
+        <button class="btn btn-primary"
+                data-bind="click: handleEditorClick">
+            Сохранить
+        </button>
+    </div>

@@ -20,7 +20,7 @@ namespace web_api_test.Controllers
         }
 
         [HttpPost]
-        public IReservation CreateReservation(IReservation item)
+        public IReservation CreateReservation(Reservation item)
         {
             return repo.Add(item);
         }
@@ -31,16 +31,17 @@ namespace web_api_test.Controllers
             return repo.Update(item);
         }
 
-        public IReservation PostReservation(IReservation item)
-        {
-            return repo.Add(item);
-        }
+        //public IReservation PostReservation(IReservation item)
+        //{
+        //    return repo.Add(item);
+        //}
 
-        public bool PutReservation(IReservation item)
-        {
-            return repo.Update(item);
-        }
+        //public bool PutReservation(IReservation item)
+        //{
+        //    return repo.Update(item);
+        //}
 
+        [HttpDelete]
         public void DeleteReservation(int id)
         {
             repo.Remove(id);
