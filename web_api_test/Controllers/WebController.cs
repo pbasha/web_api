@@ -7,7 +7,7 @@ namespace web_api_test.Controllers
 {
     public class WebController : ApiController
     {
-        private IReservationRespository repo = ReservationRespository.Current;
+        private IReservationRespository repo = DBReservationRepository.Current;
 
         public IEnumerable<IReservation> GetAllReservations()
         {
@@ -47,7 +47,7 @@ namespace web_api_test.Controllers
         [HttpDelete]
         public void DeleteReservation(int id)
         {
-            repo.Remove(id);
+            repo.Delete(id);
         }
     }
 }

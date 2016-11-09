@@ -7,7 +7,7 @@ namespace web_api_test.Models
         IEnumerable<IReservation> GetAll();
         IReservation Add(IReservation item);
         bool Update(IReservation item);
-        void Remove(int id);
+        void Delete(int id);
         IReservation Get(int id);
 }
 }

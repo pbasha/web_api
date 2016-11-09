@@ -17,11 +17,11 @@ namespace web_api_test.Models
 
         private List<IReservation> data = new List<IReservation> {
             new Reservation {
-                ReservationId = 1, ClientName = "Петр", Location = "Отель", Email = "glad@gmail.com", Phone = "(050) 453-1241"},
+                Id = 1, ClientName = "Петр", Location = "Отель", Email = "glad@gmail.com", Phone = "(050) 453-1241"},
             new Reservation {
-                ReservationId = 2, ClientName = "Вася", Location = "Библиотека", Email = "sec@gmail.com", Phone = "(096) 542-1224"},
+                Id = 2, ClientName = "Вася", Location = "Библиотека", Email = "sec@gmail.com", Phone = "(096) 542-1224"},
             new Reservation {
-                ReservationId = 3, ClientName = "Игорь", Location = "Столовая", Email = "tredo@mail.ru", Phone = "(063) 124-6724"}
+                Id = 3, ClientName = "Игорь", Location = "Столовая", Email = "tredo@mail.ru", Phone = "(063) 124-6724"}
         };
 
         public IEnumerable<IReservation> GetAll()
@@ -31,17 +31,17 @@ namespace web_api_test.Models
 
         public IReservation Get(int id)
         {
-            return data.Where(r => r.ReservationId == id).FirstOrDefault();
+            return data.Where(r => r.Id == id).FirstOrDefault();
         }
 
         public IReservation Add(IReservation item)
         {
-            item.ReservationId = data.Count + 1;
+            item.Id = data.Count + 1;
             data.Add(item);
             return item;
         }
 
-        public void Remove(int id)
+        public void Delete(int id)
         {
             IReservation item = Get(id);
             if (item != null)
@@ -52,7 +52,7 @@ namespace web_api_test.Models
 
         public bool Update(IReservation item)
         {
-            IReservation storedItem = Get(item.ReservationId);
+            IReservation storedItem = Get(item.Id);
             if (storedItem != null)
             {
                 storedItem.ClientName = item.ClientName;
