@@ -17,11 +17,11 @@ namespace web_api_test.Models
 
         private List<IReservation> data = new List<IReservation> {
             new Reservation {
-                ReservationId = 1, ClientName = "Петр", Location = "Отель", Email = "glad@gmail.com", Phone = "050-453-1241"},
+                ReservationId = 1, ClientName = "Петр", Location = "Отель", Email = "glad@gmail.com", Phone = "(050) 453-1241"},
             new Reservation {
-                ReservationId = 2, ClientName = "Вася", Location = "Библиотека", Email = "sec@gmail.com", Phone = "096-542-1224"},
+                ReservationId = 2, ClientName = "Вася", Location = "Библиотека", Email = "sec@gmail.com", Phone = "(096) 542-1224"},
             new Reservation {
-                ReservationId = 3, ClientName = "Игорь", Location = "Столовая", Email = "tredo@mail.ru", Phone = "063-124-6724"}
+                ReservationId = 3, ClientName = "Игорь", Location = "Столовая", Email = "tredo@mail.ru", Phone = "(063) 124-6724"}
         };
 
         public IEnumerable<IReservation> GetAll()

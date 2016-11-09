@@ -22,7 +22,10 @@ namespace web_api_test.Controllers
         [HttpPost]
         public IReservation CreateReservation(Reservation item)
         {
-            return repo.Add(item);
+            if (ModelState.IsValid)
+                return repo.Add(item);
+            else
+                return null;
         }
 
         [HttpPut]
